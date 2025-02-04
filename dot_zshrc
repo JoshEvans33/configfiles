@@ -1,0 +1,71 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export VAULT_ADDR=https://clotho.broadinstitute.org:8200
+
+# Setup History configs.
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups # remove older duplicate entries from history
+setopt hist_reduce_blanks   # remove superfluous blanks from hisotry items
+setopt inc_append_history   # save history entries as soon as they are entered
+setopt share_history        # sare history between different instances of the shell
+
+# Other Zsh configs
+setopt auto_cd     # cd by typing directory name if it's not a command
+setopt correct_all # autocorrect commands
+
+# Antibody plugin manager setup.
+source <(antibody init)
+
+# Load Plugins
+antibody bundle zdharma/fast-syntax-highlighting
+antibody bundle chrissicool/zsh-256color
+antibody bundle zsh-users/zsh-autosuggestions
+antibody bundle zsh-users/zsh-completions
+
+# Add Spaceship Theme
+antibody bundle spaceship-prompt/spaceship-prompt
+
+# Define custom aliases
+alias cat='bat'                                                                                  # changes cat command to use bat for better output
+alias ls='eza'                                                                                   # changes ls command to eza for better output. Make sure eza is installed.
+alias la='ls -a'
+alias reload='exec zsh'                                                                          # reloads zsh in acctive window.
+alias allhistory='code ~/.zsh_history'                                                           # opens history file in VSCode. 
+alias snipets='code "~/Library/Application Support/espanso/match/base.yml"'           # opens Espanso snipets in VSCode.
+alias set_requester_pays='sh $HOME/documents/github/horsefish/scripts/set_requester_pays.sh'     # Runs requester pays script.
+alias checkconfigs='code ~/.local/share/chezmoi/'                                                               # opens zshrc in VSCode.
+
+# Sever Aliases
+source ~/.server_alias.zsh # Imports Alias File
+
+# Add folders to path
+export PATH="$PATH:$HOME/.scripts" # Add custom script folder
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/evans/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/evans/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/evans/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/evans/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add CLI tools to Zsh session
+eval "$(zoxide init zsh)"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/Users/evans/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/evans/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/Users/evans/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/evans/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+
