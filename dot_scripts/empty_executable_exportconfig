@@ -8,7 +8,7 @@
 KERNEL=$(uname)
 
 # Checks if macOS, then performs specific actions.
-If [ $KERNEL == "Darwin" ]; then
+if [ $KERNEL == "Darwin" ]; then
 
     # Exports Brewfile of currently installed apps.
     echo "Checking installed applications..."

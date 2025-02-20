@@ -34,7 +34,6 @@ alias la='ls -a'
 alias reload='exec zsh'                                                                          # reloads zsh in acctive window.
 alias allhistory='code ~/.zsh_history'                                                           # opens history file in VSCode. 
 alias snipets='code "~/Library/Application Support/espanso/match/base.yml"'           # opens Espanso snipets in VSCode.
-alias set_requester_pays='sh $HOME/documents/github/horsefish/scripts/set_requester_pays.sh'     # Runs requester pays script.
 alias checkconfigs='code ~/.local/share/chezmoi/'                                                               # opens zshrc in VSCode.
 
 # Sever Aliases
