@@ -23,5 +23,5 @@ fi
 echo "Pushing Changes to GitHub."
 echo 
 chezmoi git add .
-chezmoi -- commit -m "Configs Updated."
+chezmoi git -- commit -m "Configs Updated."
 chezmoi git push
