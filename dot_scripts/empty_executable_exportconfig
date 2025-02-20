@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#################################################################
+# Script to export installed applications and configs to GitHub #
+#################################################################
+
+# Loads kernel into variable.
+KERNEL=$(uname)
+
+# Checks if macOS, then performs specific actions.
+If [ $KERNEL == "Darwin" ]; then
+
+    # Exports Brewfile of currently installed apps.
+    echo "Checking installed applications..."
+    echo 
+    brew bundle dump --force --global
+    chezmoi add ~/.Brewfile
+    echo "Applications exported."
+    echo
+fi 
+
+# Commits changes to GitHub.
+echo "Pushing Changes to GitHub."
+echo 
+chezmoi git add .
+chezmoi -- commit -m "Configs Updated."
+chezmoi git push
