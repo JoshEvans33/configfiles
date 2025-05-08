@@ -53,6 +53,8 @@ if [ -f '/Users/evans/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '
 eval "$(zoxide init zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+# Add Atuin to Zsh session
+eval "$(atuin init zsh)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

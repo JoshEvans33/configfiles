@@ -11,7 +11,8 @@ Here is a list of tools that I use to configure my terminal:
 - [fzf](https://github.com/junegunn/fzf)- allows for "fuzzy" finding in CLI searches; zoxide needs it to run.
 - [tldr](https://tldr.sh/) - explains what commands do with examples.
 - [Starship Prompt](https://github.com/starship/starship) - a shell theme that works with any shell. 
-- [Fira Code Font](https://www.nerdfonts.com/font-downloads) - Starship Prompt needs it to display some icons
+- [Fira Code Font](https://www.nerdfonts.com/font-downloads) - Starship Prompt needs it to display some icons.
+- [Atuin](https://atuin.sh/) - better history database with fuzzy search.
 
 ## Installation
 The above apps can be installed using [homebrew](https://brew.sh/). After that, some of them need to be added to your `.zshrc` file.
