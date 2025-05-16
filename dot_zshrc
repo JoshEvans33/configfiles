@@ -42,6 +42,7 @@ source ~/.server_alias.zsh # Imports Alias File
 # Add folders to path
 export PATH="$PATH:$HOME/.scripts" # Add custom script folder
 export PATH="$PATH:$HOME/Library/Python/3.9/bin" # Add python packages (pip) to path
+export PATH="$PATH:/Users/evans/bin" # Adds Terraform to path
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/evans/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/evans/Downloads/google-cloud-sdk/path.zsh.inc'; fi
