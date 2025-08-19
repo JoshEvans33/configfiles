@@ -1,0 +1,5 @@
+font-size = 16
+theme = Dracula
+background-opacity = .85
+background-blur = true
+window-save-state = always

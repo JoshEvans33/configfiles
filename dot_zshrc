@@ -29,7 +29,7 @@ eval "$(starship init zsh)"
 
 # Define custom aliases
 alias cat='bat'                                                                                  # changes cat command to use bat for better output
-alias ls='eza'                                                                                   # changes ls command to eza for better output. Make sure eza is installed.
+alias ls='eza --icons=always'                                                                                   # changes ls command to eza for better output. Make sure eza is installed.
 alias la='ls -a'
 alias reload='exec zsh'                                                                          # reloads zsh in acctive window.
 alias allhistory='code ~/.zsh_history'                                                           # opens history file in VSCode. 
