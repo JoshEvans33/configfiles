@@ -15,14 +15,10 @@ setopt share_history        # sare history between different instances of the sh
 setopt auto_cd     # cd by typing directory name if it's not a command
 setopt correct_all # autocorrect commands
 
-# Antibody plugin manager setup.
-source <(antibody init)
-
-# Load Plugins
-antibody bundle zdharma/fast-syntax-highlighting
-antibody bundle chrissicool/zsh-256color
-antibody bundle zsh-users/zsh-autosuggestions
-antibody bundle zsh-users/zsh-completions
+# Source Antidote zsh package manager
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+# Starts Antidote and loads plugins in zsh_plugins.txt
+antidote load
 
 # Add Starship Prompt
 eval "$(starship init zsh)"
@@ -37,7 +33,7 @@ alias snipets='code "~/Library/Application Support/espanso/match/base.yml"'     
 alias checkconfigs='code ~/.local/share/chezmoi/'                                                # opens zshrc in VSCode.
 
 # Sever Aliases
-source ~/.server_alias.zsh # Imports Alias File
+#source ~/.server_alias.zsh # Imports Alias File
 
 # Add folders to path
 export PATH="$PATH:$HOME/.scripts" # Add custom script folder
@@ -56,19 +52,3 @@ eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 # Add Atuin to Zsh session
 eval "$(atuin init zsh)"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/evans/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/evans/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/evans/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/evans/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-

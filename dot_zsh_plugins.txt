@@ -1,0 +1,7 @@
+# Plugins for Zsh
+# List used by antidote to install
+
+zdharma/fast-syntax-highlighting
+chrissicool/zsh-256color
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
